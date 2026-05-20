@@ -1,21 +1,62 @@
-# Python Template
+Wymagania
 
-[![python](https://img.shields.io/badge/Python-3.14-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![ruff](https://github.com/wnowicki/pytemp/workflows/Ruff/badge.svg)](https://github.com/wnowicki/pytemp/actions?query=branch%3Amain)
-[![pytest](https://github.com/wnowicki/pytemp/workflows/Pytest/badge.svg)](https://github.com/wnowicki/pytemp/actions?query=branch%3Amain)
-[![pylint](https://github.com/wnowicki/pytemp/workflows/Pylint/badge.svg)](https://github.com/wnowicki/pytemp/actions?query=branch%3Amain)
-[![markdown](https://github.com/wnowicki/pytemp/workflows/Markdown%20Lint/badge.svg)](https://github.com/wnowicki/pytemp/actions?query=branch%3Amain)
-[![License: GPLv3](https://img.shields.io/badge/License-MIT-blue.svg)](https://license.md/licenses/mit-license/)
+- Python ≥ 3.14
+- [`uv`](https://docs.astral.sh/uv/) – menadżer środowisk Python
 
-## Test
+Instalacja i uruchomienie
 
-```shell
-uv run pytest
+```bash
+# Klonowanie repozytorium
+git clone <https://github.com/fs30572/Connect4>
+cd connect4
+
+# Instalacja
+<.../connect4> uv venv
+<.../connect4> uv pip install -e .
+<.../connect4> uv sync --group dev
+<.../connect4> uv pip install -e .
+
+# Uruchomienie gry
+<.../connect4> uv run connect4
 ```
 
-## Security
+Uruchomienie testów
 
-If you discover any security-related issues, please email [email](mailto:email) instead of using the issue tracker.
+```bash
+<>.../connect4> uv run pytest
+```
+
+Sprawdzenie jakości kodu (linter)
+
+```bash
+<.../connect4>uv run ruff check app/ tests/
+```
 
 ---
-Copyright (c) [year] [fullname]
+
+Jak grać
+
+Po uruchomieniu `uv run connect4` pojawi się plansza 6×7. Wpisz numer kolumny (1–7) i zatwierdź Enterem. AI odpowiada automatycznie.
+
+```
+╔══════════════════════════════╗
+║   Connect 4  –  AI Minimax   ║
+║   Gracz (X)  vs  AI (O)      ║
+╚══════════════════════════════╝
+
+1 2 3 4 5 6 7
+. . . . . . .
+. . . . . . .
+. . . . . . .
+. . . . . . .
+. . . . . . .
+. . . . . . .
+
+Twój ruch (1–7):
+```
+
+| Symbol | Znaczenie |
+|--------|-----------|
+| `X`    | Gracz     |
+| `O`    | AI        |
+| `.`    | Puste pole|
