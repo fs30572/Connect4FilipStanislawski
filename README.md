@@ -12,6 +12,7 @@
 git clone <https://github.com/fs30572/Connect4FilipStanislawski>
 cd connect4
 
+
 # Instalacja
 <.../connect4> uv venv
 <.../connect4> uv pip install -e .
