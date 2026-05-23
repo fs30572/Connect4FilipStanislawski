@@ -1,13 +1,15 @@
-Wymagania
+# Connect 4 – AI Minimax
+
+## Wymagania
 
 - Python ≥ 3.14
 - [`uv`](https://docs.astral.sh/uv/) – menadżer środowisk Python
 
-Instalacja i uruchomienie
+## Instalacja i uruchomienie
 
 ```bash
 # Klonowanie repozytorium
-git clone <https://github.com/fs30572/Connect4FilipStanislawski/tree/fs30572Connect4>
+git clone <https://github.com/fs30572/Connect4FilipStanislawski>
 cd connect4
 
 # Instalacja
@@ -20,13 +22,13 @@ cd connect4
 <.../connect4> uv run connect4
 ```
 
-Uruchomienie testów
+## Uruchomienie testów
 
 ```bash
 <>.../connect4> uv run pytest
 ```
 
-Sprawdzenie jakości kodu (linter)
+## Sprawdzenie jakości kodu (linter)
 
 ```bash
 <.../connect4>uv run ruff check app/ tests/
@@ -34,11 +36,11 @@ Sprawdzenie jakości kodu (linter)
 
 ---
 
-Jak grać
+## Jak grać
 
 Po uruchomieniu `uv run connect4` pojawi się plansza 6×7. Wpisz numer kolumny (1–7) i zatwierdź Enterem. AI odpowiada automatycznie.
 
-```
+```text
 ╔══════════════════════════════╗
 ║   Connect 4  –  AI Minimax   ║
 ║   Gracz (X)  vs  AI (O)      ║
