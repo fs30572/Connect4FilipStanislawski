@@ -7,7 +7,7 @@ Instalacja i uruchomienie
 
 ```bash
 # Klonowanie repozytorium
-git clone <https://github.com/fs30572/Connect4>
+git clone <[https://github.com/fs30572/Connect4](https://github.com/fs30572/Connect4FilipStanislawski/tree/fs30572Connect4)>
 cd connect4
 
 # Instalacja
