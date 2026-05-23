@@ -1,6 +1,6 @@
-Raport – Connect 4 AI (Minimax z Alpha-Beta Pruning)
+# Raport – Connect 4 AI (Minimax z Alpha-Beta Pruning)
 
-1. Opis problemu
+## 1. Opis problemu
 
 Celem projektu jest stworzenie agenta AI zdolnego do gry w **Connect 4** (Cztery w rzędzie)
 na wysokim poziomie. Gra toczy się na planszy 6×7, gdzie dwóch graczy na przemian wrzuca
@@ -12,10 +12,12 @@ każdy gracz widzi cały stan planszy, a zysk jednej strony jest stratą drugiej
 klasyczny przypadek dla algorytmu **Minimax**.
 
 ---
-2. Opis danych
+
+## 2. Opis danych
 
 Projekt nie korzysta z zewnętrznych zbiorów danych. Stan gry jest w pełni opisany przez
 planszę 6×7 (42 komórki), gdzie każda komórka przyjmuje wartość:
+
 - `0` – puste pole
 - `1` – żeton gracza
 - `2` – żeton AI
@@ -24,7 +26,8 @@ Dane wejściowe to ruch gracza (numer kolumny 1–7). Dane wyjściowe to ruch AI
 wyznaczony przez algorytm Minimax.
 
 ---
-3. Uzasadnienie wyboru algorytmu
+
+## 3. Uzasadnienie wyboru algorytmu
 
 **Minimax** jest algorytmem dedykowanym do gier dwuosobowych o sumie zerowej.
 Modeluje grę jako drzewo decyzji, gdzie jeden gracz maksymalizuje swój wynik (AI),
@@ -45,8 +48,9 @@ pozwalając na głębsze przeszukiwanie w tym samym czasie bez utraty jakości d
 
 ---
 
-4. Wyjaśnienie działania metody
-4.1 Minimax
+## 4. Wyjaśnienie działania metody
+
+### 4.1 Minimax
 
 Algorytm buduje drzewo decyzji do zadanej głębokości (`AI_DEPTH = 5`).
 W węzłach terminalnych przypisywany jest wynik:
@@ -61,15 +65,16 @@ W węzłach terminalnych przypisywany jest wynik:
 Węzeł **maksymalizujący** (AI) wybiera ruch dający najwyższy wynik.
 Węzeł **minimalizujący** (gracz) wybiera ruch dający najniższy wynik.
 
-4.2 Alpha-Beta Pruning
+### 4.2 Alpha-Beta Pruning
 
 Parametry α i β ograniczają zakres poszukiwań:
+
 - **α** – najlepsza wartość gwarantowana dla AI (maksimum)
 - **β** – najlepsza wartość gwarantowana dla gracza (minimum)
 
 Jeśli w danej gałęzi `α ≥ β`, dalsza eksploracja jest zbędna – gałąź jest odcinana.
 
-4.3 Funkcja heurystyczna (`score_position`)
+### 4.3 Funkcja heurystyczna (`score_position`)
 
 Ocena stanu planszy przy limicie głębokości:
 
@@ -86,7 +91,7 @@ Ocena stanu planszy przy limicie głębokości:
 
 ---
 
-5. Opis przeprowadzonych testów
+## 5. Opis przeprowadzonych testów
 
 Projekt zawiera **21 testów jednostkowych** (`pytest`) w dwóch modułach:
 
@@ -123,7 +128,7 @@ Projekt zawiera **21 testów jednostkowych** (`pytest`) w dwóch modułach:
 
 ---
 
-6. Uzyskane wyniki
+## 6. Uzyskane wyniki
 
 | Metryka | Wynik |
 |---------|-------|
@@ -135,7 +140,7 @@ Projekt zawiera **21 testów jednostkowych** (`pytest`) w dwóch modułach:
 
 ---
 
-7. Wnioski
+## 7. Wnioski
 
 Algorytm Minimax z Alpha-Beta pruning doskonale sprawdza się w grach deterministycznych
 o pełnej informacji. Przy głębokości 5 AI jest bardzo silnym przeciwnikiem – blokuje
@@ -145,6 +150,7 @@ Heurystyka oceniająca okna 4-komórkowe okazała się wystarczająca do osiągn
 wysokiej jakości gry przy umiarkowanym czasie obliczeń.
 
 **Możliwe usprawnienia:**
+
 - Zwiększenie głębokości przeszukiwania kosztem czasu obliczeniowego
 - Iteracyjne pogłębianie (IDDFS) z limitem czasu na ruch
 - Tablica transpozycji (cache stanów planszy) – znaczne przyspieszenie
