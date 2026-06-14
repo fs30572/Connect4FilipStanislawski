@@ -9,7 +9,7 @@
 
 ```bash
 # Klonowanie repozytorium
-clone -b fs30572Connect4 https://github.com/fs30572/Connect4FilipStanislawski.git
+git clone -b fs30572Connect4 https://github.com/fs30572/Connect4FilipStanislawski.git
 cd connect4
 
 
